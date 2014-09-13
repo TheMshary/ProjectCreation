@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
+	<script language="javascript" type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body align="center"><div style="margin-left: 20%; margin-right: 20%">
+	<div id="inventory">
+		<p class="title">-Inventory-</p>
+		{% if not inv_items %}
+			<b>Inventory empty</b>
+		{% endif %}
+		{% for item in inv_items %}
+			<b class="inv_items">{{ item }}</b>
+		{% endfor %}
+		<hr>
+	</div>
+	<div id="shop">
+		<p class="title">-Shop-</p>
+		<table align="center">
+		{% for item in shop_items %}
+			<tr><td style="text-align: left;"><b class="shop_items">{{ item }}</b>
+			<td><button>Buy</button></td></tr>
+		{% endfor %}</table>
+		<hr>
+	</div>
+	<div id="clickables">
+		<p class="title">-Clickables-</p>
+		{% if not clickables %}
+			<b>No Clickables</b>
+		{% endif %}
+		{% for click in clickables %}
+			<b class="click_items">{{ item }}</b>
+		{% endfor %}
+		<hr>
+	</div>
+</div></body>
+</html>
