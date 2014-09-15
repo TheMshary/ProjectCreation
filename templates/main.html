@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+
+	<title>Creation Prototype</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script language="javascript" type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+
 </head>
 <body align="center"><div style="margin-left: 20%; margin-right: 20%">
 	<div id="inventory">
 		<p class="title">-Inventory-</p>
-		{% if not inv_items %}
+		{% if inv_empty %}
 			<b>Inventory empty</b>
+		{% else %}
+			<table align="center">
+			<tr><td style="text-align: left;"><b>Fire</b></td><td id="fire"><b>0</b></td></tr>
+			<tr><td style="text-align: left;"><b>Water</b></td><td id="water"><b>0</b></td></tr>
+			<tr><td style="text-align: left;"><b>Air</b></td><td id="air"><b>0</b></td></tr>
+			<tr><td style="text-align: left;"><b>Earth</b></td><td id="earth"><b>0</b></td></tr>
+			</tr>
+			</table>
 		{% endif %}
-		{% for item in inv_items %}
-			<b class="inv_items">{{ item }}</b>
-		{% endfor %}
+		
 		<hr>
 	</div>
 	<div id="shop">
@@ -21,7 +31,7 @@
 		<table align="center">
 		{% for item in shop_items %}
 			<tr><td style="text-align: left;"><b class="shop_items">{{ item }}</b>
-			<td><button>Buy</button></td></tr>
+			<td><button class="buy">Buy</button></td></tr>
 		{% endfor %}</table>
 		<hr>
 	</div>
