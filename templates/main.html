@@ -2,11 +2,11 @@
 <html>
 <head>
 
-	<title>Creation Prototype</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+<title>Creation Prototype</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 
 </head>
 <body align="center"><div style="margin-left: 20%; margin-right: 20%">
@@ -15,13 +15,16 @@
 		{% if inv_empty %}
 			<b>Inventory empty</b>
 		{% else %}
-			<table align="center">
-			<tr><td style="text-align: left;"><b>Fire</b></td><td id="fire"><b>0</b></td></tr>
-			<tr><td style="text-align: left;"><b>Water</b></td><td id="water"><b>0</b></td></tr>
-			<tr><td style="text-align: left;"><b>Air</b></td><td id="air"><b>0</b></td></tr>
-			<tr><td style="text-align: left;"><b>Earth</b></td><td id="earth"><b>0</b></td></tr>
+			<table align="center"><tr>
+			<td><table align="center">
+			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Fire"><b class="dred">Λ</b></td><td id="Fire"><b class="inv_q">0</b></td></tr>
+			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Water"><b class="dred">Π</b></td><td id="Water"><b class="inv_q">0</b></td></tr>
+			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Air"><b class="dred">Θ</b></td><td id="Air"><b class="inv_q">0</b></td></tr>
+			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Earth"><b class="dred">Ω</b></td><td id="Earth"><b class="inv_q">0</b></td></tr>
 			</tr>
-			</table>
+			</table></td>
+			<td><input type="button" value="Combine Elements"></td>
+			</tr></table>
 		{% endif %}
 		
 		<hr>
@@ -31,7 +34,7 @@
 		<table align="center">
 		{% for item in shop_items %}
 			<tr><td style="text-align: left;"><b class="shop_items">{{ item }}</b>
-			<td><button class="buy">Buy</button></td></tr>
+			<td><button class="buy" id="{{ item }}">Buy</button></td></tr>
 		{% endfor %}</table>
 		<hr>
 	</div>
