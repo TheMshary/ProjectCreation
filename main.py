@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 # ------ elements ------ #
 # zeroth level elements #
-zero_zero = "Fire"
-zero_one = "Water"
-zero_two = "Air"
-zero_three = "Earth"
+zero_zero = "Lambda"
+zero_one = "Pi"
+zero_two = "Theta"
+zero_three = "Omega"
 
 zero_el = (zero_zero, zero_one, zero_two, zero_three)
 

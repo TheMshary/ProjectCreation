@@ -2,14 +2,15 @@
 <html>
 <head>
 
-<title>Creation Prototype</title>
+<title>MAQUE Prototype</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{ url_for('static', filename='jquery.js') }}"></script>
 <script language="javascript" type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 
 </head>
 <body align="center"><div style="margin-left: 20%; margin-right: 20%">
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - Inventory - - - - - - - - - - - - - - - - - - - - - - -->
 	<div id="inventory">
 		<p class="title">-Inventory-</p>
 		{% if inv_empty %}
@@ -17,11 +18,20 @@
 		{% else %}
 			<table align="center"><tr>
 			<td><table align="center">
-			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Fire"><b class="dred">Λ</b></td><td id="Fire"><b class="inv_q">0</b></td></tr>
-			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Water"><b class="dred">Π</b></td><td id="Water"><b class="inv_q">0</b></td></tr>
-			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Air"><b class="dred">Θ</b></td><td id="Air"><b class="inv_q">0</b></td></tr>
-			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Earth"><b class="dred">Ω</b></td><td id="Earth"><b class="inv_q">0</b></td></tr>
+
+			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Lambda"><b class="dred">Λ</b></td>
+			<td id="Lambda"><b class="inv_q">0</b></td></tr>
+			
+			<tr><td style="text-align: left;"><input checked type="checkbox" class="invcb" data-id="Pi"><b class="dred">Π</b></td>
+			<td id="Pi"><b class="inv_q">0</b></td></tr>
+			
+			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Theta"><b class="dred">Θ</b></td>
+			<td id="Theta"><b class="inv_q">0</b></td></tr>
+			
+			<tr><td style="text-align: left;"><input type="checkbox" class="invcb" data-id="Omega"><b class="dred">Ω</b></td>
+			<td id="Omega"><b class="inv_q">0</b></td></tr>
 			</tr>
+			
 			</table></td>
 			<td><input type="button" value="Combine Elements"></td>
 			</tr></table>
@@ -29,6 +39,8 @@
 		
 		<hr>
 	</div>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - /Inventory - - - - - - - - - - - - - - - - - - - - - - -->	
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - Shop - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<div id="shop">
 		<p class="title">-Shop-</p>
 		<table align="center">
@@ -38,6 +50,8 @@
 		{% endfor %}</table>
 		<hr>
 	</div>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - /Shop - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - Clickables - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<div id="clickables">
 		<p class="title">-Clickables-</p>
 		{% if not clickables %}
@@ -48,5 +62,6 @@
 		{% endfor %}
 		<hr>
 	</div>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - /Clickables - - - - - - - - - - - - - - - - - - - - - - - - -->
 </div></body>
 </html>
