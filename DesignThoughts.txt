@@ -1,0 +1,13 @@
+(1) Lambda
+(2) Pi
+(3) Theta
+(4) Omega
+
+1_2	|	Lambda + Pi			=	Lampi
+1_3	|	Lambda + Theta		=	Thelam
+1_4	|	Lambda + Omega		=	Omeda
+
+2_3	|	Pi + Theta			=	Pieta
+2_4	|	Pi + Omega			=	Omepi
+
+3_4	|	Theta + Omega		=	Theoga

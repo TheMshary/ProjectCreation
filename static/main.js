@@ -9,11 +9,15 @@ $(function() {
 
 	function create_base() {
 		
+		// OK so now we got the selected elements, what do we do when combining them?
+		// TODO :: Design the first BASE.
+		
+		// Lambda + Pi = LambdaPi continuum 
+		
 		var checked = $("input[class=invcb]:checked");
-		var alert_me = "";
-
+		
 		checked.each(function(index, element) {
-			console.log("Index: "+index+"..Element: "+$(element).attr("data-id")+"\n");
+			
 		});
 
 		//console.log(checked);
