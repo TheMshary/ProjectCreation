@@ -1,7 +1,13 @@
+
+====== Elements ======
+
 (1) Lambda
 (2) Pi
 (3) Theta
 (4) Omega
+
+
+======= Bases ========
 
 1_2	|	Lambda + Pi			=	Lampi
 1_3	|	Lambda + Theta		=	Thelam
